@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/img/icon-modified.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+ <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+       <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({
+           tex2jax: {
+             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+             processEscapes: true
+           }
+         });
+       </script>
+       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Mermaid 9.1.1 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({
+      startOnLoad:true,
+      theme: 'default',
+    });"></script>
+    
+
+    <!-- Simple Jekyll Search 1.10.0 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-http://localhost:4000';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+      const analyticsNameGA4 = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="http://localhost:4000/assets/img/img2.jpg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Why Use Preimages In Continuity | Funky Functors</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Why Use Preimages In Continuity" />
+<meta name="author" content="Ishan Srivastava" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="While studying topology, one come across a definition of continuity between spaces which goes like “Let $X$ and $Y$ be topological spaces. A function $f: X \rightarrow Y$ is said to be continuous at $x \in X$ if for any open set $V$ of $Y$ containing $f(x)$, we have $f^{-1} (V)$ to be open in $X$”. While this definition holds true, its rationale might not be immediately apparent. In this post, we will delve into why preimages are favored over images, and why a simpler image-based definition falls short." />
+<meta property="og:description" content="While studying topology, one come across a definition of continuity between spaces which goes like “Let $X$ and $Y$ be topological spaces. A function $f: X \rightarrow Y$ is said to be continuous at $x \in X$ if for any open set $V$ of $Y$ containing $f(x)$, we have $f^{-1} (V)$ to be open in $X$”. While this definition holds true, its rationale might not be immediately apparent. In this post, we will delve into why preimages are favored over images, and why a simpler image-based definition falls short." />
+<link rel="canonical" href="http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html" />
+<meta property="og:url" content="http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html" />
+<meta property="og:site_name" content="Funky Functors" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-23T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Why Use Preimages In Continuity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ishan Srivastava"},"dateModified":"2023-08-23T00:00:00+05:30","datePublished":"2023-08-23T00:00:00+05:30","description":"While studying topology, one come across a definition of continuity between spaces which goes like “Let $X$ and $Y$ be topological spaces. A function $f: X \\rightarrow Y$ is said to be continuous at $x \\in X$ if for any open set $V$ of $Y$ containing $f(x)$, we have $f^{-1} (V)$ to be open in $X$”. While this definition holds true, its rationale might not be immediately apparent. In this post, we will delve into why preimages are favored over images, and why a simpler image-based definition falls short.","headline":"Why Use Preimages In Continuity","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html"},"url":"http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Funky Functors" href="http://localhost:4000/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Funky Functors" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Why Use Preimages In Continuity">
+    <meta name="twitter:description" content="While studying topology, one come across a definition of continuity between spaces which goes like “Let $X$ and $Y$ be topological spaces. A function $f: X \...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://localhost:4000/assets/img/img2.jpg">
+    <meta name="twitter:image:alt" content="Why Use Preimages In Continuity">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/icon-modified.png" loading="lazy"/>
+		</a>
+        
+        <a class="site-title" aria-label="Funky Functors" href="/">
+        Funky Functors
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About me" title="About me" href="/about-me/">
+                     About me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                     Blog 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Projects" title="Projects" href="/projects/">
+                     Projects 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Why Use Preimages In Continuity " aria-label="Why Use Preimages In Continuity" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Why+Use+Preimages+In+Continuity" class="title">Why Use Preimages In Continuity</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      August 23, 2023
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p>While studying topology, one come across a definition of continuity between spaces which goes like “Let $X$ and $Y$ be topological spaces. A function $f: X \rightarrow Y$ is said to be continuous at $x \in X$ if for any open set $V$ of $Y$ containing $f(x)$, we have $f^{-1} (V)$  to be open in $X$”. While this definition holds true, its rationale might not be immediately apparent. In this post, we will delve into why preimages are favored over images, and why a simpler image-based definition falls short.</p>
+
+<h1 id="notations">Notations:</h1>
+
+<p>To begin, let’s first establish the notation used. We consider topological spaces $X$ and $Y$, and a mapping $f: X \rightarrow Y$. Open sets of $Y$ are denoted as $V$, while open sets of $X$ are referred to as $U$.</p>
+
+<h1 id="intuition-of-continuity-and-open-sets">Intuition of continuity and open sets:</h1>
+
+<p>Before delving into the specifics, I want to discuss a bit about intuition behind continuity and open sets. Essentially, continuity (at $x$) means all points which are infinitely close to $x$ gets mapped to points infinitely close to $f(x)$. Hence, the name continunity. In analysis, we try to formalize this idea using ‘arbitrary closeness’. 
+For example, one might have seen the ed definition of continuity which goes like $\forall \varepsilon&gt;0 \cdots |f(x)-f(c)|&lt;\varepsilon$, this statement says that $f(x)$ and $f(c)$ are arbitrarily close since their difference is smaller than any positive real number. Furthermore, if $c$ is infinitely close to $x$ then $c$ would in all open intervals of $x$ because we have $|x-c|&lt;\varepsilon$ for every $\varepsilon \in \mathbb{R}^+$. This in turn means that $c \in (x-\varepsilon, x+\varepsilon)$ for every positive $\varepsilon$. Thus, $c$ is in every open interval containg $x$ and since in reals, open set is just arbitrary union of open intervals, we might as well say that $c$ is in every open set containing $x$. One of the primary reason we reframe it in terms of open set is to get rid of metric (distance function), so that we can easily generalize it to spaces not having any well defined or interesting notion of distance.</p>
+
+<h1 id="why-image-condition-is-weak">Why image condition is weak:</h1>
+
+<p>Imagine replacing the preimage condition with the image condition: “If $U$ is an open set in $X$, then $f(U)$ is an open set in $Y$.” At first glance, this might seem reasonable for defining continuity. However, upon closer examination, its insufficiency becomes evident. Consider two points, $x$ and $c$, infinitely close in $X$. This means that $c$ lies within every open set in $X$ that contains $x$. Let $U$ be one such set. Our condition asserts that $f(U)$ is open in Y. So far, so good. But now what? We know that $f(c)$ is in SOME of open sets in $Y$ containing $f(x)$. More specifically, the open sets corresponding to open set in $X$ that includes both $x$ and $c$. However, this information is not enough to conclude that $f(x)$ and $f(c)$ are infinitely close (or in other words, that $f$ is continuous at $x$). To establish this, it’s not sufficient for $f(c)$ to just be in SOME open set around $f(x)$. Instead, it must be in EVERY open set of $Y$ that encompasses $f(x)$, not just a select few.</p>
+
+<h1 id="why-preimage-definition-works">Why preimage definition works:</h1>
+
+<p>The essence of continuity is more accurately encapsulated through the preimage-based definition: “For any open set $V$ in $Y$ containing $f(x)$, the preimage $f^{-1}(V)$ is open in $X$.” I hope you can see what is coming up, we are already talking about every open set containing $f(x)$. This definition is indeed strong enough to conclude $f(x)$ and $f(c)$ is infinitely close. Here is why. Let’s say they are not. Then there must exist some open set, $V$, of $Y$ containing $f(x)$ but not $f(c)$ (because if $f(c)$ is contained in all such open set, $f(x)$ and $f(c)$ must be infact infinitely close). But that would mean $f^{-1}(V)$ is open in $X$ and does not contain $c$, that is, $x$ and $c$ are not infinitely close. A contradiction!</p>
+
+<h1 id="some-closing-remarks">Some closing remarks:</h1>
+
+<p>In conclusion, the preimage-based definition of continuity possesses robustness that the image-based condition lacks. This robustness ensures that all points infinitely close to $x$ are mapped to points infinitely close to $f(x)$, securing the foundation of continuity within the realm of topological spaces. It is worth noting that preimages are well behaved in general, as evident from properties like $f^{-1}(Y \cap Z) = f^{-1}(Y) \cap f^{-1}(Z)$, $f^{-1}(Y \cup Z) = f^{-1}(Y) \cup f^{-1}(Z)$, $f^{-1}(Y \setminus Z) = f^{-1}(Y) \setminus f^{-1}(Z)$ and other similar relationships. Perhaps, this is another reason why usage of preimage is (pre)dominant.</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Why+Use+Preimages+In+Continuity%20http%3A%2F%2Flocalhost%3A4000%2Fmathematics%2F2023%2F08%2F23%2Fwhy-use-preimages-in-continuity.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html&quote=Why+Use+Preimages+In+Continuity%20%7C%20Funky+Functors&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html&media=$description=While+studying+topology%2C+one+come+across+a+definition+of+continuity+between+spaces+which+goes+like+%E2%80%9CLet+%24X%24+and+%24Y%24+be+topological+spaces.+A+function+%24f%3A+X+%5Crightarrow+Y%24+is+said+to+be+continuous+at+%24x+%5Cin+X%24+if+for+any+open+set+%24V%24+of+%24Y%24+containing+%24f%28x%29%24%2C+we+have+%24f%5E%7B-1%7D+%28V%29%24++to+be+open+in+%24X%24%E2%80%9D.+While+this+definition+holds+true%2C+its+rationale+might+not+be+immediately+apparent.+In+this+post%2C+we+will+delve+into+why+preimages+are+favored+over+images%2C+and+why+a+simpler+image-based+definition+falls+short.%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html&title=Why+Use+Preimages+In+Continuity%20%7C%20Funky+Functors"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html&title=Why+Use+Preimages+In+Continuity%20%7C%20Funky+Functors&summary=&source=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Why Use Preimages In Continuity%20%7C%20Funky Functors&body=http://localhost:4000/mathematics/2023/08/23/why-use-preimages-in-continuity.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#analysis">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> analysis</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#topology">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> topology</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/funkyfunctors"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://instagram.com/funkyfunctors"
+               title="Follow on Instagram"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:funkyfunctors@gmail.com"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script>
+  </body>
+</html>
