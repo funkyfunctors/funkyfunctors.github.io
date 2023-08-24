@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ishan Srivastava
+author: funkyfunctors
 published: true
 use_math: true
 comments: true
