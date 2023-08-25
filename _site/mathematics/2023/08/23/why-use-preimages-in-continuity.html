@@ -223,16 +223,6 @@ MathJax = {
             
         
             
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="Projects" title="Projects" href="/projects/">
-                     Projects 
-                </a>
-            </li>
-            
-            
-        
-            
             
         
             
@@ -301,11 +291,11 @@ MathJax = {
 <h1 id="intuition-of-continuity-and-open-sets">Intuition of continuity and open sets:</h1>
 
 <p>Before delving into the specifics, I want to discuss a bit about intuition behind continuity and open sets. Essentially, continuity (at $x$) means all points which are infinitely close to $x$ gets mapped to points infinitely close to $f(x)$. Hence, the name continunity. In analysis, we try to formalize this idea using ‘arbitrary closeness’. 
-For example, one might have seen the ed definition of continuity which goes like $\forall \varepsilon&gt;0 \cdots |f(x)-f(c)|&lt;\varepsilon$, this statement says that $f(x)$ and $f(c)$ are arbitrarily close since their difference is smaller than any positive real number. Furthermore, if $c$ is infinitely close to $x$ then $c$ would in all open intervals of $x$ because we have $|x-c|&lt;\varepsilon$ for every $\varepsilon \in \mathbb{R}^+$. This in turn means that $c \in (x-\varepsilon, x+\varepsilon)$ for every positive $\varepsilon$. Thus, $c$ is in every open interval containg $x$ and since in reals, open set is just arbitrary union of open intervals, we might as well say that $c$ is in every open set containing $x$. One of the primary reason we reframe it in terms of open set is to get rid of metric (distance function), so that we can easily generalize it to spaces not having any well defined or interesting notion of distance.</p>
+For example, one might have seen the epsilon-delta definition of continuity which goes like $\forall \varepsilon&gt;0 \cdots |f(x)-f(c)|&lt;\varepsilon$, this statement says that $f(x)$ and $f(c)$ are arbitrarily close since their difference is smaller than any positive real number. Furthermore, if $c$ is infinitely close to $x$ then $c$ would in all open intervals of $x$ because we have $|x-c|&lt;\varepsilon$ for every $\varepsilon \in \mathbb{R}^+$. This in turn means that $c \in (x-\varepsilon, x+\varepsilon)$ for every positive $\varepsilon$. Thus, $c$ is in every open interval containing $x$ and since in reals, open set is just arbitrary union of open intervals, we might as well say that $c$ is in every open set containing $x$. One of the primary reason we reframe it in terms of open set is to get rid of metric (distance function), so that we can easily generalize it to spaces not having any well defined or interesting notion of distance.</p>
 
 <h1 id="why-image-condition-is-weak">Why image condition is weak:</h1>
 
-<p>Imagine replacing the preimage condition with the image condition: “If $U$ is an open set in $X$, then $f(U)$ is an open set in $Y$.” At first glance, this might seem reasonable for defining continuity. However, upon closer examination, its insufficiency becomes evident. Consider two points, $x$ and $c$, infinitely close in $X$. This means that $c$ lies within every open set in $X$ that contains $x$. Let $U$ be one such set. Our condition asserts that $f(U)$ is open in Y. So far, so good. But now what? We know that $f(c)$ is in SOME of open sets in $Y$ containing $f(x)$. More specifically, the open sets corresponding to open set in $X$ that includes both $x$ and $c$. However, this information is not enough to conclude that $f(x)$ and $f(c)$ are infinitely close (or in other words, that $f$ is continuous at $x$). To establish this, it’s not sufficient for $f(c)$ to just be in SOME open set around $f(x)$. Instead, it must be in EVERY open set of $Y$ that encompasses $f(x)$, not just a select few.</p>
+<p>Imagine replacing the preimage condition with the image condition: “If $U$ is an open set in $X$, then $f(U)$ is an open set in $Y$.” At first glance, this might seem reasonable for defining continuity. However, upon closer examination, its insufficiency becomes evident. Consider two points, $x$ and $c$, infinitely close in $X$. This means that $c$ lies within every open set in $X$ that contains $x$. Let $U$ be one such set. Our condition asserts that $f(U)$ is open in Y. So far, so good. But now what? We know that $f(c)$ is in <em>some</em> of open sets in $Y$ containing $f(x)$. More specifically, the open sets corresponding to open set in $X$ that includes both $x$ and $c$. However, this information is not enough to conclude that $f(x)$ and $f(c)$ are infinitely close (or in other words, that $f$ is continuous at $x$). To establish this, it’s not sufficient for $f(c)$ to just be in <em>some</em> open set around $f(x)$. Instead, it must be in <em>every</em> open set of $Y$ that encompasses $f(x)$, not just a select few.</p>
 
 <h1 id="why-preimage-definition-works">Why preimage definition works:</h1>
 
